@@ -2,11 +2,13 @@
     "recipes": [
       {
         "id": "1",
-        "title": "Veggie Carbonara",
+        "title": "Italian Carbonara",
         "image": "veggie_carbonara.jpg",
         "time": 20,
-        "description": "A vegetarian twist on the classic Italian pasta dish with eggs, cheese, and vegetarian bacon.",
-        "vegan": false
+        "description": "The classic Italian pasta dish with eggs, cheese, and vegetarian bacon.",
+        "vegan": false,
+        "url": "giada-de-laurentiis/giadas-carbonara-recipe-1948208"
+
       },
       {
         "id": "2",
@@ -14,7 +16,9 @@
         "image": "veg_stir_fry.jpg",
         "time": 25,
         "description": "A quick and healthy vegetarian stir-fry with fresh vegetables and tofu.",
-        "vegan": true
+        "vegan": true,
+        "url": "vegetable-stir-fry-recipe0-1943780"
+
       },
       {
         "id": "3",
@@ -22,7 +26,8 @@
         "image": "veg_alfredo.jpg",
         "time": 30,
         "description": "Creamy pasta with grilled vegetarian chicken and a rich Alfredo sauce.",
-        "vegan": false
+        "vegan": false,
+        "url": "food-network-kitchen/spring-vegetable-fettuccine-alfredo-3577686"
       },
       {
         "id": "4",

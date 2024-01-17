@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import SkeletonCard from "@/components/SkeletonCard";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+
 
 interface Recipe {
   title: string;
@@ -14,13 +16,14 @@ interface Recipe {
   description: string;
   vegan: boolean;
   id: string;
+  url: string;
 }
 
 async function getRecipes(): Promise<Recipe[]> {
-  const result = await fetch("/_data/db.json");
+  const result = await fetch("http://localhost:4000/recipes");
 
   // Simulate loading delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 1));
 
   return result.json();
 }
@@ -70,7 +73,9 @@ export default function Home() {
                 <p>{recipe.description}</p>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button>View Recipe</Button>
+              <Button onClick={() => {
+                window.open(`https://www.foodnetwork.com/recipes/${recipe.url}`)
+              }}>View Recipe</Button>
                 {recipe.vegan && <Badge variant="secondary">Vegan</Badge>}
               </CardFooter>
             </Card>
