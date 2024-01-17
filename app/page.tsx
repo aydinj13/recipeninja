@@ -17,7 +17,8 @@ interface Recipe {
 }
 
 async function getRecipes(): Promise<Recipe[]> {
-  const result = await fetch('http://localhost:4000/recipes');
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const result = await fetch(`${apiUrl}/recipes`);
 
   // Simulate loading delay
   await new Promise((resolve) => setTimeout(resolve, 1000));
